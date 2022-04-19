@@ -1,4 +1,4 @@
-# REST BACKEND PROJECT
+# REST BACKEND WITH MONGODB
 
 * Install node modules : 
 ```
