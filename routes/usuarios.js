@@ -4,7 +4,7 @@ const { Router } = require('express');
 const { valFieldRole, valFieldCorreo, existeUsuarioById } = require('../helpers/validator');
 const { valFields } = require('../middlewares/validar-campos');
 
-const { usuariosGet, usuariosPost, usuariosPut, usuariosDelete, usuariosPatch } = require('../controllers/usuarios.controller');
+const { usuariosGet, usuariosPost, usuariosPut, usuariosDelete } = require('../controllers/usuarios.controller');
 
 
 const router = Router();
