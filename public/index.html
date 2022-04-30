@@ -40,7 +40,11 @@
 
             const body = { id_token: response.credential };
 
-            fetch('http://localhost:5000/api/auth/google', {
+            let url = ( window.location.hostname.includes('localhost') ) 
+                ? 'http://localhost:5000/api/auth/google' 
+                : 'https://restserver-node7.herokuapp.com/api/auth/google';
+
+            fetch(url, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
