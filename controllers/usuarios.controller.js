@@ -11,9 +11,9 @@ const usuariosGet = async (req = request, res = response) => {
     const sanitizarLimit =  Number(limite);
     const sanitizarDesde =  Number(desde);
 
-    if( !sanitizarLimit || !sanitizarDesde ){
-        res.json({
-            msg: "Parametros Incorrectos tiene que ser numeros"
+    if( isNaN(sanitizarDesde) || isNaN(sanitizarLimit) ){
+        return res.status(400).json({
+            msg: "Los valores de los parametros tienen que ser numeros"
         });
     }
 
