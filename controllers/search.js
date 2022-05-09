@@ -52,7 +52,7 @@ const buscarCategorias = async ( termino='', res=response ) => {
 
     // Buscar por nombre y estado true
     const regex = new RegExp(termino, 'i');
-    const categorias = await Categoria.find({estado: true}, {nombre: regex});
+    const categorias = await Categoria.find({estado: true, nombre: regex});
 
     res.json({
         count: categorias.length,
@@ -74,7 +74,7 @@ const buscarProductos = async ( termino='', res=response ) => {
     }
 
     const regex = new RegExp( termino, 'i' );
-    const productos = await Producto.find({estado: true}, {nombre: regex})
+    const productos = await Producto.find({estado: true, nombre: regex})
     .populate('categoria', 'nombre')
     .populate('usuario', 'nombre');
 
