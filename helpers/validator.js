@@ -44,11 +44,23 @@ const isValidPrecio = (precio) => {
     return precio;
 }
 
+const coleccionesPermitidas = ( coleccion='', colecciones=[] ) => {
+
+    const isInclude = colecciones.includes( coleccion );
+    if( !isInclude ){
+        throw new Error(`La coleccion ${coleccion} no es permitida - ${colecciones}`);
+    }
+
+    return true;
+
+}   
+
 module.exports = {
     valFieldRole,
+    isValidPrecio,
     valFieldCorreo,
     existeUsuarioById,
-    existeCategoriaPorId,
     existeProductoPorId,
-    isValidPrecio
+    existeCategoriaPorId,
+    coleccionesPermitidas,
 }
